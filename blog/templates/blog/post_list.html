@@ -8,16 +8,14 @@
 			<h1><a href=""> Django Girls Blog </a></h1>
 		</div>
 
-		<div>
-			<p>published: 27.08.2016, 14:39</p>
-			<h2><a href="">My first post</a></h2>
-			<p>Auenean eu leo quam. <em>Pellentesque ornare sem lacinia quam venenatis vestibulum. </em></p>
-		</div>
-
-		<div>
-			<p>published: 27.08.2016, 14:41</p>
-			<h2><a href="">My second post</a></h2>
-			<p> Veni Vidi Vici. </p>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+				
+			{% endfor %}
 		</div>
 	</body>
 </html>
